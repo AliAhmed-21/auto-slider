@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+
+    <style>
+        body{
+            background-color: rgba(83, 83, 83, 0.705);
+        }
+        .body1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #imageSlider {
+            width: 800px;
+            height: 500px;
+            object-fit: cover;
+            border: 2px solid #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .heading{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: underline ;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bolder;
+            
+            
+
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="heading">
+        <h1>Image slider</h1>
+    </div>
+   <div class="body1">
+    <img id="imageSlider" src="images/starter.jpg"  alt="Image Slider">
+</div>
+   
+    <script>
+        
+        const imgArray = [
+            "images/1.jpg",
+            "images/2.jpg",
+            "images/3.jpg",
+            "images/4.jpg",
+           
+        ];
+
+        let index = 0;
+        const imageSlider = document.getElementById("imageSlider");
+
+        function slide() {
+            imageSlider.src = imgArray[index];
+            index = (index + 1) % imgArray.length;
+        }
+
+        
+        setInterval(slide, 4000);
+    </script>
+</body>
+</html>
